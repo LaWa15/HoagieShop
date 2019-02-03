@@ -1,0 +1,2 @@
+module HoafiesHelper
+end

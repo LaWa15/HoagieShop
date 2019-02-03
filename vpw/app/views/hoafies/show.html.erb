@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= image_tag(@hoafy.picture_url, width: 600) if @hoafy.picture.present? %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @hoafy.comment %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @hoafy.userName %>
+</p>
+
+<p>
+  <strong>Verified:</strong>
+  <%= @hoafy.verified %>
+</p>
+
+<p>
+  <strong>Likes:</strong>
+  <%= @hoafy.likes %>
+</p>
+
+<p>
+  <strong>Hoafieofweek:</strong>
+  <%= @hoafy.hoafieOfWeek %>
+</p>
+
+<%= link_to 'Edit', edit_hoafy_path(@hoafy) %> |
+<%= link_to 'Back', hoafies_path %>

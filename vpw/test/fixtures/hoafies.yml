@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  picture: MyString
+  comment: MyString
+  userName: MyString
+  verified: false
+  likes: 1
+  hoafieOfWeek: false
+
+two:
+  picture: MyString
+  comment: MyString
+  userName: MyString
+  verified: false
+  likes: 1
+  hoafieOfWeek: false

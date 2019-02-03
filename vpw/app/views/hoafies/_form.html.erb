@@ -1,0 +1,47 @@
+<%= form_with(model: hoafy, local: true) do |form| %>
+  <% if hoafy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hoafy.errors.count, "error") %> prohibited this hoafy from being saved:</h2>
+
+      <ul>
+      <% hoafy.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :picture %>
+    <%= form.file_field :picture, id: :hoafy_picture %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_field :comment, id: :hoafy_comment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :userName %>
+    <%= form.text_field :userName, id: :hoafy_userName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :verified %>
+    <%= form.check_box :verified, id: :hoafy_verified %>
+  </div>
+
+  <div class="field">
+    <%= form.label :likes %>
+    <%= form.number_field :likes, id: :hoafy_likes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hoafieOfWeek %>
+    <%= form.check_box :hoafieOfWeek, id: :hoafy_hoafieOfWeek %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
