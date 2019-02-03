@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190203082712) do
+ActiveRecord::Schema.define(version: 20190203170340) do
 
   create_table "hoafies", force: :cascade do |t|
     t.string "picture"
@@ -19,6 +19,21 @@ ActiveRecord::Schema.define(version: 20190203082712) do
     t.boolean "verified"
     t.integer "likes"
     t.boolean "hoafieOfWeek"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hoagies", force: :cascade do |t|
+    t.string "name"
+    t.string "ingredients"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ingredient_hoagies", force: :cascade do |t|
+    t.integer "ingredient_id"
+    t.integer "hoagy_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,41 @@
+<%= form_with(model: hoagy, local: true) do |form| %>
+  <% if hoagy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hoagy.errors.count, "error") %> prohibited this hoagy from being saved:</h2>
+
+      <ul>
+      <% hoagy.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :hoagy_name %>
+  </div>
+
+  <%= fields_for(@hoagy_ingredient) do |ih| %>
+
+  <div class="field">
+    <%= ih.label "All Ingredients" %>
+    <%= collection_select(:ingredients, :id, @all_ingredients,:id, :name, {}, {:multiple =>true})%>
+  </div>
+  <% end %>
+  
+
+  <div class="field">
+    <%= form.label :ingredients %>
+    <%= form.text_field :ingredients, id: :hoagy_ingredients %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, id: :hoagy_price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

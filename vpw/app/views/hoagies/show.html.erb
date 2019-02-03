@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @hoagy.name %>
+</p>
+
+<p>
+  <strong>Ingredients:</strong>
+  <%= @hoagy.ingredients %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @hoagy.price %>
+</p>
+
+<%= link_to 'Edit', edit_hoagy_path(@hoagy) %> |
+<%= link_to 'Back', hoagies_path %>
